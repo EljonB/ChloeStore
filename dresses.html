@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chloe Dress Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="P2.css">
+    <link rel="icon" href="logo/Logo4.png">
+</head>
+<body>
+<header>
+    <a href="index.html">
+        <img src="logo/Logo4.png" alt="Chloe Dress Store Logo" class="logo"> </a>
+        <h1>Chloe Dress Store</h1>
+    
+    
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="dresses.html">Dresses</a>
+        <a href="boy-suits.html">Suits</a>
+        <a href="baby-accessories.html">Accessories</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</header>
+<br><br><br><br>
+
+<section class="product-gallery">
+    <div class="product-box">
+        <div class="carousel-container">
+            <div class="carousel-images">
+                <img src="Dresses Images/Dress3_1.jpg" alt="Dress 1">
+                <img src="Dresses Images/Dress3_2.jpg" alt="Dress 2">
+                <img src="Dresses Images/Dress3_3.jpg" alt="Dress 3">
+            </div>
+            <button class="carousel-button left" onclick="moveSlide(this, -1)">&#10094;</button>
+            <button class="carousel-button right" onclick="moveSlide(this, 1)">&#10095;</button>
+        </div>
+        <h3>Elegant Princess Dress</h3>
+        <p>A beautiful hand-made dress for your little princess. Perfect for special occasions.</p>
+        <button onclick="redirectToOrderPage('Elegant Princess Dress', ['Dresses Images/Dress3_1.jpg', 'Dresses Images/Dress3_2.jpg', 'Dresses Images/Dress3_3.jpg'])">
+            Order Now
+        </button>
+        
+    </div>
+</section>
+
+
+<section class="product-gallery">
+    <div class="product-box">
+        <div class="carousel-container">
+            <div class="carousel-images">
+                <img src="Dresses Images/Dress1_2.jpg" alt="Dress 1">
+                <img src="Dresses Images/Dress1_1.jpg" alt="Dress 2">
+                <img src="Dresses Images/Dress1_3.jpg" alt="Dress 3">
+            </div>
+            <button class="carousel-button left" onclick="moveSlide(this, -1)">&#10094;</button>
+            <button class="carousel-button right" onclick="moveSlide(this, 1)">&#10095;</button>
+        </div>
+        <h3>Mother and Daughter in Rose </h3>
+        <p>In matching rose-colored dresses adorned with delicate pearls, mother and daughter radiate timeless elegance and adorable sophistication.
+        </p>
+        <button onclick="redirectToOrderPage('Mother and Daughter in Rose', ['Dresses Images/Dress1_2.jpg', 'Dresses Images/Dress1_1.jpg', 'Dresses Images/Dress1_3.jpg'])">
+            Order Now
+        </button>
+        
+    </div>
+</section>
+
+
+<section class="product-gallery">
+    <div class="product-box">
+        <div class="carousel-container">
+            <div class="carousel-images">
+                <img src="Dresses Images/Dress2_1.jpg" alt="Dress 1">
+                <img src="Dresses Images/Dress2_2.jpg" alt="Dress 2">
+                <img src="Dresses Images/Dress2_3.jpg" alt="Dress 3">
+            </div>
+            <button class="carousel-button left" onclick="moveSlide(this, -1)">&#10094;</button>
+            <button class="carousel-button right" onclick="moveSlide(this, 1)">&#10095;</button>
+        </div>
+        <h3>Lavender Dream </h3>
+        <p>A stunning purple dress featuring a bold, oversized ribbon at the back, adding a touch of playful elegance to any occasion.
+        </p>
+        <button onclick="redirectToOrderPage('Lavender Dream', ['Dresses Images/Dress2_1.jpg', 'Dresses Images/Dress2_2.jpg', 'Dresses Images/Dress2_3.jpg'])">
+            Order Now
+        </button>
+        
+    </div>
+</section>
+
+
+<section class="product-gallery">
+    <div class="product-box">
+        <div class="carousel-container">
+            <div class="carousel-images">
+                <img src="Dresses Images/Dress4_1.jpg" alt="Dress 1">
+                <img src="Dresses Images/Dress4_2.jpg" alt="Dress 2">
+                <img src="Dresses Images/Dress4_3.jpg" alt="Dress 3">
+            </div>
+            <button class="carousel-button left" onclick="moveSlide(this, -1)">&#10094;</button>
+            <button class="carousel-button right" onclick="moveSlide(this, 1)">&#10095;</button>
+        </div>
+        <h3>Keisi's Dress</h3>
+        <p>A charming purple dress for , little girls, adorned with delicate pearls in the tutu and sleeves, complete with a matching headband, making it the perfect ensemble for a touch of enchantment and elegance on any occasion.
+
+        </p>
+        <button onclick="redirectToOrderPage('Keisi  Dress', ['Dresses Images/Dress4_1.jpg', 'Dresses Images/Dress4_2.jpg', 'Dresses Images/Dress4_3.jpg'])">
+            Order Now
+        </button>
+        
+    </div>
+</section>
+
+
+<section class="product-gallery">
+    <div class="product-box">
+        <div class="carousel-container">
+            <div class="carousel-images">
+                <img src="Dresses Images/Dress5_1.jpg" alt="Dress 1">
+                <img src="Dresses Images/Dress5_2.jpg" alt="Dress 2">
+                <img src="Dresses Images/Dress5_2.jpg" alt="Dress 3">
+            </div>
+            <button class="carousel-button left" onclick="moveSlide(this, -1)">&#10094;</button>
+            <button class="carousel-button right" onclick="moveSlide(this, 1)">&#10095;</button>
+        </div>
+        <h3>First Birthday Rose Dress        </h3>
+        <p>A sweet and adorable rose-colored dress, perfect for your little one's first birthday celebration, adding a touch of charm and innocence to this special milestone.
+        </p>
+        <button onclick="redirectToOrderPage('First Birthday Rose Dress ', ['Dresses Images/Dress5_1.jpg', 'Dresses Images/Dress5_2.jpg', 'Dresses Images/Dress5_2.jpg' ])">
+            Order Now
+        </button>
+        
+    </div>
+</section>
+
+
+<section class="product-gallery">
+    <div class="product-box">
+        <div class="carousel-container">
+            <div class="carousel-images">
+                <img src="Dresses Images/Dress6_1.jpg" alt="Dress 1">
+                <img src="Dresses Images/Dress6_2.jpg" alt="Dress 2">
+                <img src="Dresses Images/Dress6_2.jpg" alt="Dress 3">
+            
+            </div>
+            <button class="carousel-button left" onclick="moveSlide(this, -1)">&#10094;</button>
+            <button class="carousel-button right" onclick="moveSlide(this, 1)">&#10095;</button>
+        </div>
+        <h3>Gold Dress</h3>
+        <p>A stunning gold dress for little girls, like a constellation of dreams come true, perfect for making every moment shine with elegance and joy.        </p>
+        <button onclick="redirectToOrderPage('Gold Dress', ['Dresses Images/Dress6_1.jpg', 'Dresses Images/Dress6_2.jpg','Dresses Images/Dress6_2.jpg' ])">
+            Order Now
+        </button>
+        
+    </div>
+</section>
+
+<div class="switch-buttons">
+    <button class="active-button" disabled>1</button>
+    <button class="switch-button" onclick="redirectToPage(2)">2</button>
+    <button class="switch-button" onclick="redirectToPage(3)">3</button>
+</div>
+<br><br>
+<footer>
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/@chloe_dress_store" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/chloe_dress_store/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/355686715188" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p>&copy; 2025 Chloe Dress Store. All rights reserved.</p>
+</footer>
+<script>
+    function moveSlide(button, direction) {
+        const container = button.parentElement.querySelector('.carousel-images');
+        let currentSlide = container.dataset.currentSlide ? parseInt(container.dataset.currentSlide) : 0;
+        const slides = container.querySelectorAll('img');
+
+        currentSlide += direction;
+        if (currentSlide < 0) currentSlide = slides.length - 1;
+        if (currentSlide >= slides.length) currentSlide = 0;
+
+        container.dataset.currentSlide = currentSlide;
+        container.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function toggleMenu() {
+        const navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('active');
+    }
+
+    function redirectToPage(pageNumber) {
+        if (pageNumber === 2) {
+            window.location.href = `dresses2.html`;
+        } else if (pageNumber === 3) {
+            window.location.href = `dresses3.html`;
+        } else {
+            window.location.href = `page${pageNumber}.html`;
+        }
+    }
+
+    
+function redirectToOrderPage(name, images) {
+    const imageParams = images.map(img => encodeURIComponent(img)).join(',');
+    window.location.href = `order.html?name=${encodeURIComponent(name)}&images=${imageParams}`;
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8d7e1;  /* Light pink background */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h2, h3 {
+    color: #333;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+h3 {
+    margin-top: 30px;
+    font-size: 1.5em;
+}
+
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    max-width: 90%;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 10px;
+}
+
+.carousel-images img {
+    width: 100%;
+    display: none;
+    padding: 10px;  /* Added padding around the images */
+    box-sizing: border-box; /* Ensures padding is included in the element's size */
+}
+
+.carousel-images img:first-child {
+    display: block;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Form Styles */
+form {
+    background-color: #fff;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    outline: none;
+    border-color: #ff80ab; /* Light pink color for focus state */
+    box-shadow: 0 0 5px rgba(255, 128, 171, 0.5); /* Light pink glow effect */
+}
+
+button {
+    background-color: #ff80ab;  /* Light pink button */
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff66a1;  /* Slightly darker pink for hover effect */
+}
+
+/* Size Select Styling */
+select {
+    width: 100%;
+    font-size: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 100%;
+        margin: 20px auto;
+    }
+
+    form {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+}

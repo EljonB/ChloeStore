@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chloe Dress Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="P2.css">
+    <link rel="icon" href="logo/Logo4.png">
+</head>
+<body>
+<header>
+    <a href="index.html">
+        <img src="logo/Logo4.png" alt="Chloe Dress Store Logo" class="logo"> </a>
+        <h1>Chloe Dress Store</h1>
+    
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="dresses.html">Dresses</a>
+        <a href="boy-suits.html">Suits</a>
+        <a href="baby-accessories.html">Accessories</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</header>
+<br><br><br><br>
+<section class="product-gallery">
+    <div class="product-box">
+        <div class="carousel-container">
+            <div class="carousel-images">
+                <img src="Dresses Images/Dress15_1.jpg" alt="Dress 1">
+                <img src="Dresses Images/Dress15_2.jpg" alt="Dress 2">
+                <img src="Dresses Images/Dress15_3.jpg" alt="Dress 3">
+            </div>
+            <button class="carousel-button left" onclick="moveSlide(this, -1)">&#10094;</button>
+            <button class="carousel-button right" onclick="moveSlide(this, 1)">&#10095;</button>
+        </div>
+        <h3>Snowflake Gown
+        </h3>
+        <p>A sparkling white dress with a shimmer bodice, tulle skirt, and elegant sheer sleeves for a princess-perfect look.
+        </p>
+        <button onclick="redirectToOrderPage('Snowflake Gown', ['Dresses Images/Dress15_1.jpg', 'Dresses Images/Dress15_2.jpg', 'Dresses Images/Dress15_3.jpg'])">
+            Order Now
+        </button>
+        
+    </div>
+</section>
+
+ 
+<section class="product-gallery">
+    <div class="product-box">
+        <div class="carousel-container">
+            <div class="carousel-images">
+                <img src="Dresses Images/Dress14_2.jpg" alt="Dress 1">
+                <img src="Dresses Images/Dress14_1.jpg" alt="Dress 2">
+                <img src="Dresses Images/Dress14_3.jpg" alt="Dress 3">
+            </div>
+            <button class="carousel-button left" onclick="moveSlide(this, -1)">&#10094;</button>
+            <button class="carousel-button right" onclick="moveSlide(this, 1)">&#10095;</button>
+        </div>
+        <h3>Rose Petal Gown
+        </h3>
+        <p>The Rose Petal Gown is a delicate pink dress with a shimmering bodice, layered tulle skirt, and elegant cape-style sleeves, perfect for any special occasion.
+
+
+        </p>
+        <button onclick="redirectToOrderPage('Rose Petal Gown', ['Dresses Images/Dress14_2.jpg', 'Dresses Images/Dress14_1.jpg', 'Dresses Images/Dress14_3.jpg'])">
+            Order Now
+        </button>
+        
+    </div>
+</section>
+
+
+<section class="product-gallery">
+    <div class="product-box">
+        <div class="carousel-container">
+            <div class="carousel-images">
+                <img src="Dresses Images/Dress16_1.jpg" alt="Dress 1">
+                <img src="Dresses Images/Dress16_1.jpg" alt="Dress 2">
+                <img src="Dresses Images/Dress16_2.jpg" alt="Dress 3">
+            </div>
+            <button class="carousel-button left" onclick="moveSlide(this, -1)">&#10094;</button>
+            <button class="carousel-button right" onclick="moveSlide(this, 1)">&#10095;</button>
+        </div>
+        <h3>
+            Sia’s Royal Lavender 
+        </h3>
+        <p>
+            Sia’s Royal Lavender Gown is a gorgeous first birthday dress in a soft purple shade,
+             featuring a shimmering bodice, a fluffy tulle skirt, and delicate sheer accents,
+              perfect for a princess’s special day.
+        </p>
+        
+        <button onclick="redirectToOrderPage('Sia’s Royal Lavender ', ['Dresses Images/Dress16_1.jpg', 'Dresses Images/Dress16_1.jpg', 'Dresses Images/Dress16_2.jpg'])">
+            Order Now
+        </button>
+        
+    </div>
+</section>
+
+
+
+<div class="switch-buttons">
+    <button class="switch-button" onclick="redirectToPage(1)">1</button>
+    
+    <button class="switch-button" onclick="redirectToPage(2)">2</button>
+    <button class="active-button" disabled>3</button>
+    
+</div>
+<br><br>
+<footer>
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/@chloe_dress_store" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/chloe_dress_store/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/355686715188" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p>&copy; 2025 Chloe Dress Store. All rights reserved.</p>
+</footer>
+<script>
+    function moveSlide(button, direction) {
+        const container = button.parentElement.querySelector('.carousel-images');
+        let currentSlide = container.dataset.currentSlide ? parseInt(container.dataset.currentSlide) : 0;
+        const slides = container.querySelectorAll('img');
+
+        currentSlide += direction;
+        if (currentSlide < 0) currentSlide = slides.length - 1;
+        if (currentSlide >= slides.length) currentSlide = 0;
+
+        container.dataset.currentSlide = currentSlide;
+        container.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function toggleMenu() {
+        const navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('active');
+    }
+
+    function redirectToPage(pageNumber) {
+        if (pageNumber === 1) {
+            window.location.href = `dresses.html`;
+        } else if (pageNumber === 2) {
+            window.location.href = `dresses2.html`;
+        } else {
+            window.location.href = `page${pageNumber}.html`;
+        }
+    }
+
+    
+function redirectToOrderPage(name, images) {
+    const imageParams = images.map(img => encodeURIComponent(img)).join(',');
+    window.location.href = `order.html?name=${encodeURIComponent(name)}&images=${imageParams}`;
+}
+
+</script>
+</body>
+</html>

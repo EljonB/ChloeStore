@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="order.css">
+    <link rel="icon" href="logo/Logo4.png">
+    <title>Order Page</title>
+    <style>
+        .carousel-container { position: relative; max-width: 300px; margin: auto; }
+        .carousel-images img { width: 100%; display: none; }
+        .carousel-images img:first-child { display: block; }
+        .carousel-button { position: absolute; top: 50%; transform: translateY(-50%); cursor: pointer; background: #fff; border: none; }
+        .left { left: 0; }
+        .right { right: 0; }
+    </style>
+</head>
+<body>
+    <h2 id="product-name"></h2>
+    <div class="carousel-container">
+        <div class="carousel-images" id="carousel"></div>
+        <button class="carousel-button left" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-button right" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <h3>Select Size</h3>
+    <select id="size">
+        <option value="1">1 Year</option>
+        <option value="2">2 Years</option>
+        <option value="3">3 Years</option>
+        <option value="4">4 Years</option>
+        <option value="5">5 Years</option>
+        <option value="6">6 Years</option>
+        <option value="7">7 Years</option>
+        <option value="8">8 Years</option>
+        <option value="9">9 Years</option>
+        <option value="10">10 Years</option>
+        <option value="10+">10+ Years</option>
+    </select>
+
+    <h3>Order Form</h3>
+    <form id="order-form">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="text" id="address" placeholder="Address" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <button type="submit">Place Order</button>
+    </form>
+
+<br><br><br><br>
+
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get("name"),
+                images: params.get("images") ? params.get("images").split(",") : []
+            };
+        }
+
+        function displayProduct() {
+            const { name, images } = getQueryParams();
+            document.getElementById("product-name").textContent = name;  // Display the product name
+            const carousel = document.getElementById("carousel");
+            images.forEach((imgSrc, index) => {
+                const img = document.createElement("img");
+                img.src = decodeURIComponent(imgSrc);
+                if (index === 0) img.style.display = "block";
+                carousel.appendChild(img);
+            });
+        }
+
+        let slideIndex = 0;
+        function moveSlide(step) {
+            const slides = document.querySelectorAll(".carousel-images img");
+            slides[slideIndex].style.display = "none";
+            slideIndex = (slideIndex + step + slides.length) % slides.length;
+            slides[slideIndex].style.display = "block";
+        }
+
+        document.getElementById("order-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const address = document.getElementById("address").value;
+            const phone = document.getElementById("phone").value;
+            const size = document.getElementById("size").value;
+            const productName = document.getElementById("product-name").textContent;  // Get the product name
+
+            const message = `*New Order*\nDress: ${productName}\nName: ${name}\nAddress: ${address}\nPhone: ${phone}\nSize: ${size}`;
+
+            // Encode the message for URL
+            const whatsappUrl = `https://wa.me/+355686715188?text=${encodeURIComponent(message)}`;
+
+            // Redirect to WhatsApp
+            window.open(whatsappUrl, "_blank");
+        });
+
+        window.onload = displayProduct;
+    </script>
+</body>
+</html>
